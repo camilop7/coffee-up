@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import MainContent from './components/MainContent';
-import './App.css';
+// src/App.js
+import React, { useState } from "react";
+import Sidebar from "./components/Sidebar";
+import MainContent from "./components/MainContent";
+import Login from "./components/Login";
+import "./App.css";
 
-const App = () => {
-  const [theme, setTheme] = useState('light');
+function App() {
+  const [isNightMode, setIsNightMode] = useState(false);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setIsNightMode(!isNightMode);
   };
 
   return (
-    <Router>
-      <div className={`app ${theme}`}>
-        <Sidebar toggleTheme={toggleTheme} />
-        <MainContent />
-      </div>
-    </Router>
+    <div className={`app ${isNightMode ? "night-mode" : ""}`}>
+      <Sidebar toggleTheme={toggleTheme} />
+      <MainContent />
+      <Login />
+    </div>
   );
-};
+}
 
 export default App;
