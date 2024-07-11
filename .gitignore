@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# firebase
+.debug.log
+
+log/
+
 # env
 .env
 
