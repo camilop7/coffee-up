@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
 
 const Sidebar = ({ onSelect }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleItemClick = (option) => {
     onSelect(option);
+    setIsOpen(false); // Close sidebar after selecting an option
+  };
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <div className="sidebar">
-      <div className="sidebar-title">Menu</div>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-title"></div>
       <ul>
         <li onClick={() => handleItemClick('hireBarista')}>
           Hire a Barista
@@ -29,6 +36,9 @@ const Sidebar = ({ onSelect }) => {
           Trends
         </li>
       </ul>
+      <div className="sidebar-toggle" onClick={toggleSidebar}>
+
+      </div>
     </div>
   );
 };

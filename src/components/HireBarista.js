@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './HireBarista.css';
+import BaristaProfileCard from './BaristaProfileCard';
+import ShopReviewCard from './ShopReviewCard';
+import AvailabilityCalendar from './AvailabilityCalendar';
 
 const HireBarista = ({ isDarkMode }) => {
   const [formData, setFormData] = useState({
@@ -15,6 +18,30 @@ const HireBarista = ({ isDarkMode }) => {
     date: '',
     time: ''
   });
+
+  const [baristas] = useState([
+    {
+      id: 1,
+      name: 'John Doe',
+      avatar: 'avatar.jpg',
+      introduction: 'Experienced barista with a passion for latte art.',
+      availability: [
+        { date: '2024-08-01', color: 'blue' },
+        { date: '2024-08-05', color: 'green' }
+      ]
+    },
+    // Add more barista profiles as needed
+  ]);
+
+  const [shops] = useState([
+    {
+      id: 1,
+      image: 'shop1.jpg',
+      locationLink: 'https://maps.google.com/',
+      review: 'Great atmosphere and excellent coffee.'
+    },
+    // Add more shop reviews as needed
+  ]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -139,6 +166,20 @@ const HireBarista = ({ isDarkMode }) => {
         </div>
         <button type="submit">Submit</button>
       </form>
+
+      <div className="barista-profiles">
+        {baristas.map(barista => (
+          <BaristaProfileCard key={barista.id} barista={barista} />
+        ))}
+      </div>
+
+      <div className="shop-reviews">
+        {shops.map(shop => (
+          <ShopReviewCard key={shop.id} shop={shop} />
+        ))}
+      </div>
+
+      <AvailabilityCalendar availability={baristas.reduce((acc, curr) => [...acc, ...curr.availability], [])} />
     </div>
   );
 };

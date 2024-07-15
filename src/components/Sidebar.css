@@ -4,7 +4,7 @@
   background-color: #ffffff;
   color: #000;
   position: fixed;
-  top: 90px; /* Adjusted to be below the navbar */
+  top: 40px; /* Adjusted to be below the navbar */
   bottom: 4px; /* Margin from the bottom */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -17,13 +17,15 @@
 .sidebar ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+
 }
 
 .sidebar li {
   margin-bottom: 12px; /* Space between items */
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  margin-top: 56px;
+  margin-left: 24px;
 }
 
 .sidebar li:hover {

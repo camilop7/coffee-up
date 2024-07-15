@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MainContent.css';
 import HireBarista from './HireBarista';
-import HireTechnician from './HireTechnician';
+import HireTechnician from './HireTechnician'; // Import the HireTechnician component
 import RetailShop from './RetailShop';
 import CuppingTickets from './CuppingTickets';
 import News from './News';
@@ -21,7 +21,7 @@ const MainContent = ({ selectedOption }) => {
   };
 
   // React to changes in selectedOption
-  React.useEffect(() => {
+  useEffect(() => {
     switch (selectedOption) {
       case 'hireBarista':
         loadComponent(<HireBarista />);
@@ -42,7 +42,7 @@ const MainContent = ({ selectedOption }) => {
         loadComponent(<Trends />);
         break;
       default:
-        setCurrentComponent(null);
+        setCurrentComponent(null); // Handle the default case as needed
         break;
     }
   }, [selectedOption]);

@@ -10,6 +10,7 @@
   position: fixed; /* Fixes the position of the main content */
   top: 60px; /* Adjust to sit below the navbar */
   width: calc(100% - 250px); /* Adjust to fit the remaining width */
+  margin: 20px;
 }
 
 .loading-indicator {
