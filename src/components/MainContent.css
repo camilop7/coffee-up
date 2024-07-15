@@ -1,14 +1,22 @@
 /* src/components/MainContent.css */
-
 .main-content {
+  margin-left: 250px; /* Adjusted to match sidebar width */
+  padding: 20px; /* Adjusted padding */
+  background-color: #ffffff;
   flex-grow: 1;
-  padding: 20px;
-  margin: 4px;
-  background-color: #ececec;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  height: calc(100vh - 60px); /* Full height minus navbar height */
+  overflow-y: auto; /* Scroll if content overflows */
+  position: fixed; /* Fixes the position of the main content */
+  top: 60px; /* Adjust to sit below the navbar */
+  width: calc(100% - 250px); /* Adjust to fit the remaining width */
+}
+
+.loading-indicator {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 56px;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #666; /* Gray text color */
 }

@@ -1,0 +1,9 @@
+/* src/components/Avatar.css */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  margin-left: 20px;
+}

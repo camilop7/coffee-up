@@ -1,27 +1,32 @@
-// src/components/Sidebar.js
+import React from 'react';
+import './Sidebar.css';
 
-import React from "react";
-import { Link } from "react-router-dom";
+const Sidebar = ({ onSelect }) => {
+  const handleItemClick = (option) => {
+    onSelect(option);
+  };
 
-const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className="sidebar-title">Services</div>
+      <div className="sidebar-title">Menu</div>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
+        <li onClick={() => handleItemClick('hireBarista')}>
+          Hire a Barista
         </li>
-        <li>
-          <Link to="/cupping-tickets">Cupping Tickets</Link>
+        <li onClick={() => handleItemClick('hireTechnician')}>
+          Hire a Technician
         </li>
-        <li>
-          <Link to="/retail-shop">Retail Shop</Link>
+        <li onClick={() => handleItemClick('retailShop')}>
+          Retail Shop
         </li>
-        <li>
-          <Link to="/hire-barista">Hire Barista</Link>
+        <li onClick={() => handleItemClick('cuppingTickets')}>
+          Cupping Tickets
         </li>
-        <li>
-          <Link to="/hire-technician">Hire Technician</Link>
+        <li onClick={() => handleItemClick('news')}>
+          News
+        </li>
+        <li onClick={() => handleItemClick('trends')}>
+          Trends
         </li>
       </ul>
     </div>

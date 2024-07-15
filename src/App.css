@@ -1,116 +1,13 @@
 /* src/App.css */
-
 .app {
   display: flex;
-  min-height: 100vh;
-  margin: 4px;
   font-family: Arial, sans-serif;
-}
-
-.sidebar {
-  width: 250px;
-  background-color: #ffffff;
-  color: #000; /* Black text color */
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  z-index: 1; /* Ensure sidebar is below navbar */
-}
-
-.sidebar-title {
-  font-size: 1.2rem; /* Title font size */
-  font-weight: bold;
-  margin-bottom: 20px; /* Space between title and links */
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin-bottom: 12px; /* Space between items */
+  background-color: #f5f5f5; /* Light grey background */
+  min-height: 100vh;
 }
 
 .main-content {
-  margin-left: 296px; /* Adjusted to match sidebar width */
   flex-grow: 1;
-  padding: 20px;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  box-sizing: border-box;
-  margin-top: 60px; /* Ensure content is below navbar */
-}
-
-.navbar {
-  width: 78.6%;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Apply blur effect */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  position: fixed;
-  top: 0; /* Stick to the top */
-  z-index: 1000; /* Ensure navbar is above content */
-}
-
-.navbar .title {
-  font-size: 1.5rem; /* Larger font size for title */
-}
-
-.navbar .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ccc;
-  cursor: pointer;
-}
-
-.drawer-menu {
-  position: absolute; /* Position absolute instead of fixed */
-  top: 60px; /* Below the navbar */
-  right: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  display: none;
-  z-index: 1000;
-}
-
-.drawer-menu.active {
-  display: block;
-}
-
-.drawer-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #333;
-  text-decoration: none;
-}
-
-.drawer-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-.navbar .drawer-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #7b7b7b; /* Gray text color */
-  text-decoration: none;
-}
-
-.navbar .drawer-menu a:hover {
-  background-color: #e0e0e0; /* Light gray background on hover */
+  margin-left: 300px; /* Ensure main content does not overlap sidebar */
+  margin-top: 30px;
 }

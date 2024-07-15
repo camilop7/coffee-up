@@ -1,25 +1,18 @@
-// src/components/NavBar.js
-import React, { useState } from 'react';
-import './NavBar.css';
+import React from 'react';
+import DrawerMenu from './DrawerMenu';
+import Avatar from './Avatar';
+import './Navbar.css';
 
-const NavBar = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const toggleDrawer = () => {
-    setDrawerOpen(!drawerOpen);
-  };
-
+const Navbar = () => {
   return (
     <div className="navbar">
-      <button onClick={toggleDrawer}>☰</button>
-      <button className="avatar">👤</button>
-      <div className={`drawer-menu ${drawerOpen ? 'active' : ''}`}>
-        <a href="/about">About Us</a>
-        <a href="/contact">Contact</a>
-        <a href="/social">Social Media</a>
+      <div className="navbar-logo">Company Logo</div>
+      <div className="navbar-menu">
+        <DrawerMenu />
+        <Avatar />
       </div>
     </div>
   );
 };
 
-export default NavBar;
+export default Navbar;

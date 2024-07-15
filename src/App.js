@@ -1,26 +1,27 @@
-// src/App.js
 import React, { useState } from 'react';
+import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
-import NavBar from './components/NavBar';
 import './App.css';
+import News from './components/News';
+import Trends from './components/Trends';
 
-function App() {
-  const [isNightMode, setIsNightMode] = useState(false);
+const App = () => {
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const toggleTheme = () => {
-    setIsNightMode(!isNightMode);
+  const handleSelectOption = (option) => {
+    setSelectedOption(option);
   };
 
   return (
-    <div className={`app ${isNightMode ? 'night-mode' : ''}`}>
-      <Sidebar toggleTheme={toggleTheme} />
-      <div className="main-content">
-        <NavBar />
-        <MainContent />
-      </div>
+    <div className="app">
+      <Navbar />
+      <Sidebar onSelect={handleSelectOption} />
+      <MainContent selectedOption={selectedOption} />
+      {selectedOption === 'news' && <News />}
+      {selectedOption === 'trends' && <Trends />}
     </div>
   );
-}
+};
 
 export default App;

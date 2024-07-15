@@ -1,39 +1,135 @@
 /* src/components/Home.css */
 
-.card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   padding: 20px;
-  max-width: 400px;
-  text-align: left;
+  box-sizing: border-box;
+  margin-top: 100px;
 }
 
-.card img {
-  width: 100%;
+/* Horizontal Card */
+.card-horizontal {
+  display: flex;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
 }
 
-.card h3 {
-  margin-top: 0;
+.card-img-horizontal {
+  width: 50%;
+  object-fit: cover;
 }
 
-.card p {
-  color: #333333;
+.card-content-horizontal {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.card button {
-  margin-top: 10px;
-  padding: 10px 20px;
+.card-content-horizontal h2 {
+  margin: 0 0 10px;
+}
+
+.card-content-horizontal p {
+  margin: 0 0 20px;
+}
+
+/* Vertical Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.card-vertical {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-img-vertical {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content-vertical {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-content-vertical h2 {
+  margin: 0 0 10px;
+}
+
+.card-content-vertical p {
+  margin: 0 0 20px;
+}
+
+/* Sign-Up Form Card */
+.card-form {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card-form h2 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.card-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.card-form button {
+  padding: 10px;
   border: none;
-  background-color: #7b7b7b;
-  color: #ffffff;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.card button:hover {
-  background-color: #187bcd;
+.card-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Call to Action Button */
+.cta-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
 }
