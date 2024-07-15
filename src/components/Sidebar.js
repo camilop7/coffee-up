@@ -1,33 +1,29 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Sidebar.css';
+// src/components/Sidebar.js
 
-const Sidebar = ({ toggleTheme }) => {
-  const [isNightMode, setIsNightMode] = useState(false);
+import React from "react";
+import { Link } from "react-router-dom";
 
-  const handleToggleTheme = () => {
-    setIsNightMode(!isNightMode);
-    toggleTheme();
-  };
-
+const Sidebar = () => {
   return (
     <div className="sidebar">
-      <h2>Barista Hub</h2>
-      <nav>
-        <ul>
-          <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink></li>
-          <li><NavLink to="/hire-barista" className={({ isActive }) => (isActive ? 'active' : '')}>Hire a Barista</NavLink></li>
-          <li><NavLink to="/hire-technician" className={({ isActive }) => (isActive ? 'active' : '')}>Hire a Technician</NavLink></li>
-          <li><NavLink to="/cupping-tickets" className={({ isActive }) => (isActive ? 'active' : '')}>Cupping Tickets</NavLink></li>
-          <li><NavLink to="/retail-shop" className={({ isActive }) => (isActive ? 'active' : '')}>Retail Shop</NavLink></li>
-        </ul>
-      </nav>
-      <div className="sidebar-footer">
-        <button className="login-logout-button">Login</button>
-        <button className="night-mode-button" onClick={handleToggleTheme}>
-          {isNightMode ? 'Day Mode' : 'Night Mode'}
-        </button>
-      </div>
+      <div className="sidebar-title">Services</div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/cupping-tickets">Cupping Tickets</Link>
+        </li>
+        <li>
+          <Link to="/retail-shop">Retail Shop</Link>
+        </li>
+        <li>
+          <Link to="/hire-barista">Hire Barista</Link>
+        </li>
+        <li>
+          <Link to="/hire-technician">Hire Technician</Link>
+        </li>
+      </ul>
     </div>
   );
 };

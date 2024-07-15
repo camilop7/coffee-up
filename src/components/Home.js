@@ -1,12 +1,14 @@
+// src/components/Home.js
 import React from 'react';
+import './Home.css';
 
-const Home = () => {
-  return (
-    <div>
-      <h2>Welcome to Home</h2>
-      <p>This is the home page of your application.</p>
-    </div>
-  );
-};
+const Home = () => (
+  <div className="card">
+    <img src="path/to/image.jpg" alt="Example" />
+    <h3>Welcome to Coffee-up</h3>
+    <p>Discover the best coffee experience.</p>
+    <button>Get Started</button>
+  </div>
+);
 
 export default Home;

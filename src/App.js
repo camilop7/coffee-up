@@ -1,9 +1,9 @@
 // src/App.js
-import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import MainContent from "./components/MainContent";
-import Login from "./components/Login";
-import "./App.css";
+import React, { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
+import NavBar from './components/NavBar';
+import './App.css';
 
 function App() {
   const [isNightMode, setIsNightMode] = useState(false);
@@ -13,10 +13,12 @@ function App() {
   };
 
   return (
-    <div className={`app ${isNightMode ? "night-mode" : ""}`}>
+    <div className={`app ${isNightMode ? 'night-mode' : ''}`}>
       <Sidebar toggleTheme={toggleTheme} />
-      <MainContent />
-      <Login />
+      <div className="main-content">
+        <NavBar />
+        <MainContent />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,69 @@
+/* src/components/NavBar.css */
+
+.navbar {
+  width: calc(84% - 224px); /* Adjust to account for the sidebar */
+  background-color: #7b7b7b;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar button {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  color: #333; /* Change to a visible color */
+  transition: color 0.3s ease;
+  text-align: right;
+  margin-right: 12px;
+}
+
+.navbar button:hover {
+  color: #007bff; /* Hover color */
+}
+
+.navbar .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .avatar:hover {
+  background-color: #f0f0f0; /* Hover background color */
+}
+
+.drawer-menu {
+  position: fixed;
+  top: 60px; /* Below the navbar */
+  right: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+.drawer-menu.active {
+  display: block;
+}
+
+.drawer-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #7b7b7b;
+  text-decoration: none;
+}
+
+.drawer-menu a:hover {
+  background-color: #f0f0f0;
+}

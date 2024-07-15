@@ -1,61 +1,35 @@
+/* src/components/Sidebar.css */
+
 .sidebar {
   width: 250px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   padding: 20px;
-  height: 100vh; /* Full height */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
-  list-style: none;
+.sidebar h3 {
+  color: #fff; /* Sidebar heading color */
+}
+
+.sidebar ul {
+  list-style-type: none;
   padding: 0;
 }
 
-nav ul li {
-  margin: 15px 0;
+.sidebar li {
+  margin-bottom: 10px;
 }
 
-nav ul li a {
+.sidebar a {
+  color: #ccc; /* Sidebar link color */
   text-decoration: none;
-  color: #333;
+  transition: color 0.3s ease;
 }
 
-nav ul li a.active {
-  font-weight: bold;
-}
-
-.sidebar-footer {
-  margin-top: auto;
-  margin-bottom: 24px;
-}
-
-.login-logout-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-}
-
-.login-logout-button:hover {
-  background-color: #0056b3;
-}
-
-.night-mode-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #555;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.night-mode-button:hover {
-  background-color: #333;
+.sidebar a:hover {
+  color: #fff; /* Sidebar link hover color */
 }
