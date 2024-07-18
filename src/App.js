@@ -10,8 +10,11 @@ const App = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSelectOption = (option) => {
+    console.log('Selected Option:', option); // Log the selected option
     setSelectedOption(option);
   };
+
+  console.log('Current Selected Option:', selectedOption); // Log the current selected option
 
   return (
     <div className="app">

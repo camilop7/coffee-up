@@ -1,48 +1,38 @@
+// src/components/MainContent.js
 import React, { useState, useEffect } from 'react';
-import './MainContent.css';
-import HireBarista from './HireBarista';
-import HireTechnician from './HireTechnician'; // Import the HireTechnician component
-import RetailShop from './RetailShop';
-import CuppingTickets from './CuppingTickets';
-import News from './News';
-import Trends from './Trends';
+import ProfileForm from './ProfileForm';
+import ShopForm from './ShopForm';
+import ProductForm from './ProductForm';
+import ChatbotForm from './ChatbotForm';
 
 const MainContent = ({ selectedOption }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentComponent, setCurrentComponent] = useState(null);
 
-  // Function to handle delayed loading
   const loadComponent = (component) => {
     setIsLoading(true);
     setTimeout(() => {
       setCurrentComponent(component);
       setIsLoading(false);
-    }, 500); // 0.5 second delay
+    }, 500);
   };
 
-  // React to changes in selectedOption
   useEffect(() => {
     switch (selectedOption) {
-      case 'hireBarista':
-        loadComponent(<HireBarista />);
+      case 'profile':
+        loadComponent(<ProfileForm />);
         break;
-      case 'hireTechnician':
-        loadComponent(<HireTechnician />);
+      case 'shop':
+        loadComponent(<ShopForm />);
         break;
-      case 'retailShop':
-        loadComponent(<RetailShop />);
+      case 'product':
+        loadComponent(<ProductForm />);
         break;
-      case 'cuppingTickets':
-        loadComponent(<CuppingTickets />);
-        break;
-      case 'news':
-        loadComponent(<News />);
-        break;
-      case 'trends':
-        loadComponent(<Trends />);
+      case 'chatbot':
+        loadComponent(<ChatbotForm />);
         break;
       default:
-        setCurrentComponent(null); // Handle the default case as needed
+        setCurrentComponent(null);
         break;
     }
   }, [selectedOption]);
