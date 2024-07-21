@@ -3,8 +3,6 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import './App.css';
-import News from './components/News';
-import Trends from './components/Trends';
 
 const App = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -21,8 +19,6 @@ const App = () => {
       <Navbar />
       <Sidebar onSelect={handleSelectOption} />
       <MainContent selectedOption={selectedOption} />
-      {selectedOption === 'news' && <News />}
-      {selectedOption === 'trends' && <Trends />}
     </div>
   );
 };

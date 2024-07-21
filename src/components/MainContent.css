@@ -1,23 +1,11 @@
-/* src/components/MainContent.css */
 .main-content {
-  margin-left: 250px; /* Adjusted to match sidebar width */
-  padding: 20px; /* Adjusted padding */
+  padding: 20px;
   background-color: #ffffff;
   flex-grow: 1;
   box-sizing: border-box;
-  height: calc(100vh - 60px); /* Full height minus navbar height */
-  overflow-y: auto; /* Scroll if content overflows */
-  position: fixed; /* Fixes the position of the main content */
-  top: 60px; /* Adjust to sit below the navbar */
+  overflow-y: auto;
+  margin-top: 60px; /* Ensure content is below the navbar */
+  margin-left: 250px; /* Ensure it is beside the sidebar */
   width: calc(100% - 250px); /* Adjust to fit the remaining width */
-  margin: 20px;
-}
-
-.loading-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 1.2rem;
-  color: #666; /* Gray text color */
+  position: relative; /* Change from fixed to relative for testing */
 }

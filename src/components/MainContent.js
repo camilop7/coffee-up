@@ -1,9 +1,12 @@
-// src/components/MainContent.js
 import React, { useState, useEffect } from 'react';
 import ProfileForm from './ProfileForm';
 import ShopForm from './ShopForm';
 import ProductForm from './ProductForm';
 import ChatbotForm from './ChatbotForm';
+import HireBarista from './HireBarista';
+import HireTechnician from './HireTechnician';
+import RetailShop from './RetailShop';
+import CuppingTickets from './CuppingTickets';
 
 const MainContent = ({ selectedOption }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +33,18 @@ const MainContent = ({ selectedOption }) => {
         break;
       case 'chatbot':
         loadComponent(<ChatbotForm />);
+        break;
+      case 'hireBarista':
+        loadComponent(<HireBarista />);
+        break;
+      case 'hireTechnician':
+        loadComponent(<HireTechnician />);
+        break;
+      case 'retailShop':
+        loadComponent(<RetailShop />);
+        break;
+      case 'cuppingTickets':
+        loadComponent(<CuppingTickets />);
         break;
       default:
         setCurrentComponent(null);
