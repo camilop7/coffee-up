@@ -1,0 +1,70 @@
+/* Shop.css */
+
+.shop {
+  padding: 20px;
+}
+
+.shop-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.banner {
+  margin-bottom: 20px;
+}
+
+.featured-products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured-product-card {
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 18%;
+}
+
+.shop-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.shop-controls input,
+.shop-controls select {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

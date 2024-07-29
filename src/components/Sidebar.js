@@ -23,9 +23,6 @@ const Sidebar = ({ onSelect }) => {
         <li onClick={() => handleItemClick('hireTechnician')}>
           Hire a Technician
         </li>
-        <li onClick={() => handleItemClick('retailShop')}>
-          Retail Shop
-        </li>
         <li onClick={() => handleItemClick('cuppingTickets')}>
           Cupping Tickets
         </li>

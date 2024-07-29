@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Add useEffect
+import React, { useState, useEffect } from 'react';
 import { addShop, updateShop, getShop, deleteShop } from '../services/shopService';
 
 const ShopForm = ({ shopId }) => {

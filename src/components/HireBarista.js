@@ -5,6 +5,7 @@ import ShopReviewCard from './ShopReviewCard';
 import AvailabilityCalendar from './AvailabilityCalendar';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel styles
+import ErrorBoundary from './ErrorBoundary'; // Import ErrorBoundary
 
 const HireBarista = ({ isDarkMode }) => {
   const [formData, setFormData] = useState({
@@ -201,9 +202,9 @@ const HireBarista = ({ isDarkMode }) => {
       </form>
 
       <div className="shop-reviews">
-        {shops.map(shop => (
-          <ShopReviewCard key={shop.id} shop={shop} />
-        ))}
+        <ErrorBoundary>
+          <ShopReviewCard shops={shops} />
+        </ErrorBoundary>
       </div>
 
       <AvailabilityCalendar availability={baristas.reduce((acc, curr) => [...acc, ...curr.availability], [])} />

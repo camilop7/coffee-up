@@ -4,19 +4,57 @@
   padding: 20px;
 }
 
-.hire-technician h2 {
-  font-size: 1.5rem;
+.hire-technician-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.partner-banner {
+  display: flex;
+  justify-content: space-around;
   margin-bottom: 20px;
 }
 
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.partner-banner img {
+  width: 100px;
+  height: auto;
+}
+
+.carousel .slide img {
+  border-radius: 5%;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5%;
+  color: #fff;
+}
+
+.carousel-caption h2 {
+  margin: 0;
+}
+
+.carousel-caption button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-card, .form-card {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 5%;
   padding: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card .avatar {

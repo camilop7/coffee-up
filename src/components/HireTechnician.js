@@ -1,27 +1,37 @@
-// HireTechnician.js
 import React, { useState } from 'react';
 import './HireTechnician.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-// Technician Profile Card component
-const TechnicianProfileCard = () => {
+const PartnerBanner = () => {
+  return (
+    <div className="partner-banner">
+      <img src="logo1.png" alt="Partner Logo 1" />
+      <img src="logo2.png" alt="Partner Logo 2" />
+      <img src="logo3.png" alt="Partner Logo 3" />
+      <img src="logo4.png" alt="Partner Logo 4" />
+    </div>
+  );
+};
+
+const TechnicianProfileCard = ({ technician }) => {
   return (
     <div className="profile-card">
       <div className="avatar">
-        {/* Placeholder for avatar */}
-        <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1695482480/SU1HXzA0MjVfeHRiZmF2/drilldown" alt="Technician Avatar" />
+        <img src={technician.avatar} alt="Technician Avatar" />
       </div>
       <div className="technician-info">
-        <h3>John Doe</h3>
-        <p>Experienced technician with a passion for coffee and customer satisfaction.</p>
+        <h3>{technician.name}</h3>
+        <p>{technician.introduction}</p>
       </div>
     </div>
   );
 };
 
-// Technician Booking Form component
 const TechnicianBookingForm = ({ handleSubmit, handleChange, formData, formErrors }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-card">
+      <h2>Hire a Technician</h2>
       <div className="form-group">
         <label htmlFor="name">Name:</label>
         <input
@@ -89,6 +99,16 @@ const HireTechnician = ({ isDarkMode }) => {
     date: '',
     time: ''
   });
+
+  const [technicians] = useState([
+    {
+      id: 1,
+      name: 'John Doe',
+      avatar: 'https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1695482480/SU1HXzA0MjVfeHRiZmF2/drilldown',
+      introduction: 'Experienced technician with a passion for coffee and customer satisfaction.'
+    },
+    // Add more technician profiles as needed
+  ]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -175,18 +195,41 @@ const HireTechnician = ({ isDarkMode }) => {
 
   return (
     <div className={`hire-technician ${isDarkMode ? 'hire-technician-dark' : ''}`}>
-      <h2>Hire a Technician</h2>
-
-      {/* Render Technician Profile Card */}
-      <TechnicianProfileCard />
-
-      {/* Render Technician Booking Form */}
+      <PartnerBanner />
+      <Carousel showThumbs={false} autoPlay infiniteLoop>
+        <div>
+          <img src="carousel1.jpg" alt="Carousel 1" />
+          <div className="carousel-caption">
+            <h2>Our Skilled Technicians</h2>
+            <button>Learn More</button>
+          </div>
+        </div>
+        <div>
+          <img src="carousel2.jpg" alt="Carousel 2" />
+          <div className="carousel-caption">
+            <h2>Quality Service</h2>
+            <button>Contact Us</button>
+          </div>
+        </div>
+        <div>
+          <img src="carousel3.jpg" alt="Carousel 3" />
+          <div className="carousel-caption">
+            <h2>Reliable Support</h2>
+            <button>Get Started</button>
+          </div>
+        </div>
+      </Carousel>
       <TechnicianBookingForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         formData={formData}
         formErrors={formErrors}
       />
+      <div className="technician-profiles">
+        {technicians.map(technician => (
+          <TechnicianProfileCard key={technician.id} technician={technician} />
+        ))}
+      </div>
     </div>
   );
 };
