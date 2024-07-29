@@ -1,0 +1,46 @@
+/* src/components/ShopReviewCard.css */
+
+.shop-review-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.shop-review-card .carousel .slider-wrapper {
+  height: 200px; /* Adjust height as needed */
+}
+
+.shop-review-card .carousel img {
+  height: 200px; /* Ensure images fit within the carousel height */
+  object-fit: cover;
+}
+
+.shop-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.shop-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.shop-profile-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-profile-button:hover {
+  background-color: #0056b3;
+}

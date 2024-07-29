@@ -1,13 +1,25 @@
-/* HireBarista.css */
+/* src/components/HireBarista.css */
 
 .hire-barista {
   padding: 20px;
   margin-top: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hire-barista h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+}
+
+.description-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 24px 0;
+  text-align: center;
 }
 
 .profile-card {
@@ -33,6 +45,14 @@
 
 .profile-card .barista-info {
   text-align: center;
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 24px 0;
 }
 
 .form-group {
@@ -70,4 +90,13 @@
 
 .shop-reviews {
   margin-top: 20px;
+}
+
+.carousel .slider-wrapper {
+  height: 360px; /* Adjusted height to fit carousel and not overlap */
+}
+
+.carousel img {
+  height: 360px;
+  object-fit: cover;
 }
