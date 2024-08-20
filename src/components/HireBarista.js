@@ -26,8 +26,8 @@ const HireBarista = ({ isDarkMode }) => {
     {
       id: 1,
       name: 'John Doe',
-      avatar: 'avatar.jpg',
-      introduction: 'Experienced barista with a passion for latte art.',
+      avatar: 'avatar.png',
+      introduction: 'Meet Alex, our incredibly talented barista with years of experience crafting exceptional coffee in the bustling coffee scenes of New York and London. With a deep love for the art of brewing, Alex brings a wealth of knowledge and a keen eye for detail to every cup. Whether you are after a perfectly balanced espresso or a smooth, velvety flat white, Alex is here to make your coffee experience truly unforgettable. Come say hi and let Alex create your new favorite coffee!',
       availability: [
         { date: '2024-08-01', color: 'blue' },
         { date: '2024-08-05', color: 'green' }
@@ -39,13 +39,13 @@ const HireBarista = ({ isDarkMode }) => {
   const [shops] = useState([
     {
       id: 1,
-      images: ['shop1a.jpg', 'shop1b.jpg', 'shop1c.jpg'],
+      images: ['https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1698956273/Y2xlbmtlcndlbGxfenJhNWIx/drilldown', 'shop1b.jpg', 'shop1c.jpg'],
       locationLink: 'https://maps.google.com/',
       review: 'Great atmosphere and excellent coffee.'
     },
     {
       id: 2,
-      images: ['shop2a.jpg', 'shop2b.jpg', 'shop2c.jpg'],
+      images: ['https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1698956273/Y2xlbmtlcndlbGxfenJhNWIx/drilldown', 'shop2b.jpg', 'shop2c.jpg'],
       locationLink: 'https://maps.google.com/',
       review: 'Cozy place with a fantastic selection of pastries.'
     },
@@ -125,20 +125,21 @@ const HireBarista = ({ isDarkMode }) => {
     <div className={`hire-barista ${isDarkMode ? 'hire-barista-dark' : ''}`}>
       <Carousel showThumbs={false} autoPlay infiniteLoop>
         <div>
-          <img src="carousel1.jpg" alt="Carousel 1" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724168732/Q0FSQVZBTl9ndmY3d3g=/drilldown" alt="Carousel 1" />
         </div>
         <div>
-          <img src="carousel2.jpg" alt="Carousel 2" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1698955116/a2F3YV9heThlZ2Y=/drilldown" alt="Carousel 2" />
         </div>
         <div>
-          <img src="carousel3.jpg" alt="Carousel 3" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1695482490/SU1HXzM3MjNfYXVwcmxr/drilldown" alt="Carousel 3" />
+
         </div>
       </Carousel>
 
       <div className="description-card">
         <h2>Our Barista Culture</h2>
         <p>
-          At our coffee shop, we pride ourselves on delivering the best coffee experience. Our baristas are skilled artisans, passionate about creating the perfect cup of coffee for you. We offer a range of services, including latte art, custom coffee blends, and more.
+        We pride ourselves on delivering an unparalleled coffee experience that has been finely honed over years of expertise in some of the world's most vibrant coffee cities. Our highly skilled baristas are true artisans, with a deep passion for crafting the perfect cup just for you. Whether you’re a fan of a classic espresso, a meticulously brewed V60 pour-over, or an innovative AeroPress extraction, we have the perfect brew to satisfy your coffee cravings. We offer a wide array of services, from intricate latte art that turns your coffee into a canvas, to custom coffee blends that are tailored to your unique taste preferences. Our commitment to quality and our mastery of the latest coffee brewing techniques ensure that every sip you take is an experience in itself. Come in and discover why we are the go-to destination for coffee lovers in search of perfection.
         </p>
       </div>
 

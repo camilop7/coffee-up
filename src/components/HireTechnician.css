@@ -2,6 +2,8 @@
 
 .hire-technician {
   padding: 20px;
+  width: 1100px;
+  margin-top: 24px;
 }
 
 .hire-technician-dark {
@@ -13,6 +15,7 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  margin-top: 24px;
 }
 
 .partner-banner img {
@@ -21,7 +24,7 @@
 }
 
 .carousel .slide img {
-  border-radius: 5%;
+  border: 1px solid #000000;
 }
 
 .carousel-caption {
@@ -31,8 +34,9 @@
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
-  border-radius: 5%;
   color: #fff;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .carousel-caption h2 {
@@ -44,14 +48,12 @@
   padding: 8px 16px;
   background-color: #fff;
   color: #000;
-  border: none;
-  border-radius: 4px;
+  border: 1px solid #000000;
   cursor: pointer;
 }
 
 .profile-card, .form-card {
-  border: 1px solid #ccc;
-  border-radius: 5%;
+  border: 1px solid #000000;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -59,12 +61,12 @@
 
 .profile-card .avatar {
   margin-bottom: 10px;
+  border: 1px solid #000000;
 }
 
 .profile-card .avatar img {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -89,7 +91,6 @@
   padding: 8px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .error {

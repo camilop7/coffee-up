@@ -6,10 +6,9 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 const PartnerBanner = () => {
   return (
     <div className="partner-banner">
-      <img src="logo1.png" alt="Partner Logo 1" />
-      <img src="logo2.png" alt="Partner Logo 2" />
-      <img src="logo3.png" alt="Partner Logo 3" />
-      <img src="logo4.png" alt="Partner Logo 4" />
+      <img src="avatar.png" alt="Partner Logo 1" />
+      <img src="avatar.png" alt="Partner Logo 2" />
+      <img src="avatar.png" alt="Partner Logo 3" />
     </div>
   );
 };
@@ -104,7 +103,7 @@ const HireTechnician = ({ isDarkMode }) => {
     {
       id: 1,
       name: 'John Doe',
-      avatar: 'https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1695482480/SU1HXzA0MjVfeHRiZmF2/drilldown',
+      avatar: 'avatar.png',
       introduction: 'Experienced technician with a passion for coffee and customer satisfaction.'
     },
     // Add more technician profiles as needed
@@ -198,21 +197,21 @@ const HireTechnician = ({ isDarkMode }) => {
       <PartnerBanner />
       <Carousel showThumbs={false} autoPlay infiniteLoop>
         <div>
-          <img src="carousel1.jpg" alt="Carousel 1" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724172950/c2FucmVtb19rbmlhanVfODQ2ZDE1/drilldown" alt="Carousel 1" />
           <div className="carousel-caption">
             <h2>Our Skilled Technicians</h2>
             <button>Learn More</button>
           </div>
         </div>
         <div>
-          <img src="carousel2.jpg" alt="Carousel 2" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724174235/UEhPVE8tMjAyMy0wOS0yMy0xNi0wNS0xMy00X2c0c2l0bw==/drilldown" alt="Carousel 2" />
           <div className="carousel-caption">
             <h2>Quality Service</h2>
             <button>Contact Us</button>
           </div>
         </div>
         <div>
-          <img src="carousel3.jpg" alt="Carousel 3" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1694978937/SU1HXzUxMTdfYWdmd3J2/drilldown" alt="Carousel 3" />
           <div className="carousel-caption">
             <h2>Reliable Support</h2>
             <button>Get Started</button>

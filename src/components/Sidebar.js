@@ -26,14 +26,9 @@ const Sidebar = ({ onSelect }) => {
         <li onClick={() => handleItemClick('cuppingTickets')}>
           Cupping Tickets
         </li>
-        <li onClick={() => handleItemClick('profile')}>
-          Profile
-        </li>
+
         <li onClick={() => handleItemClick('shop')}>
           Shop
-        </li>
-        <li onClick={() => handleItemClick('product')}>
-          Product
         </li>
         <li onClick={() => handleItemClick('chatbot')}>
           Chatbot
@@ -43,6 +38,9 @@ const Sidebar = ({ onSelect }) => {
         </li>
         <li onClick={() => handleItemClick('trends')}>
           Trends
+        </li>
+        <li onClick={() => handleItemClick('profile')}>
+          Profile
         </li>
       </ul>
       <div className="sidebar-toggle" onClick={toggleSidebar}>
