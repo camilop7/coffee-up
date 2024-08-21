@@ -3,7 +3,6 @@
 .hire-technician {
   padding: 20px;
   width: 1100px;
-  margin-top: 24px;
 }
 
 .hire-technician-dark {
@@ -15,7 +14,6 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
-  margin-top: 24px;
 }
 
 .partner-banner img {
@@ -24,7 +22,7 @@
 }
 
 .carousel .slide img {
-  border: 1px solid #000000;
+  border: 1px #000000;
 }
 
 .carousel-caption {
@@ -48,12 +46,12 @@
   padding: 8px 16px;
   background-color: #fff;
   color: #000;
-  border: 1px solid #000000;
+  border: 1px #000000;
   cursor: pointer;
 }
 
 .profile-card, .form-card {
-  border: 1px solid #000000;
+  border: 1px #000000;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -61,7 +59,7 @@
 
 .profile-card .avatar {
   margin-bottom: 10px;
-  border: 1px solid #000000;
+  border: 1px #000000;
 }
 
 .profile-card .avatar img {

@@ -1,55 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import ProfileForm from './ProfileForm';
-import ShopForm from './ShopForm';
-import ProductForm from './ProductForm';
-import ChatbotForm from './ChatbotForm';
-import HireBarista from './HireBarista';
-import HireTechnician from './HireTechnician';
-import RetailShop from './RetailShop';
-import CuppingTickets from './CuppingTickets';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+
+const ProfileForm = lazy(() => import('./ProfileForm'));
+const Shop = lazy(() => import('./Shop'));
+const ProductForm = lazy(() => import('./ProductForm'));
+const ChatbotForm = lazy(() => import('./ChatbotForm'));
+const HireBarista = lazy(() => import('./HireBarista'));
+const HireTechnician = lazy(() => import('./HireTechnician'));
+const RetailShop = lazy(() => import('./RetailShop'));
+const CuppingTickets = lazy(() => import('./CuppingTickets'));
 
 const MainContent = ({ selectedOption }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentComponent, setCurrentComponent] = useState(null);
 
-  const loadComponent = (component) => {
+  useEffect(() => {
     setIsLoading(true);
+    let component;
+
+    switch (selectedOption) {
+      case 'profile':
+        component = <ProfileForm />;
+        break;
+        case 'shop':
+          component = <Shop />;
+        break;
+      case 'product':
+        component = <ProductForm />;
+        break;
+      case 'chatbot':
+        component = <ChatbotForm />;
+        break;
+      case 'hireBarista':
+        component = <HireBarista />;
+        break;
+      case 'hireTechnician':
+        component = <HireTechnician />;
+        break;
+      case 'retailShop':
+        component = <RetailShop />;
+        break;
+      case 'cuppingTickets':
+        component = <CuppingTickets />;
+        break;
+      default:
+        component = null;
+        break;
+    }
+
     setTimeout(() => {
       setCurrentComponent(component);
       setIsLoading(false);
     }, 500);
-  };
-
-  useEffect(() => {
-    switch (selectedOption) {
-      case 'profile':
-        loadComponent(<ProfileForm />);
-        break;
-      case 'shop':
-        loadComponent(<ShopForm />);
-        break;
-      case 'product':
-        loadComponent(<ProductForm />);
-        break;
-      case 'chatbot':
-        loadComponent(<ChatbotForm />);
-        break;
-      case 'hireBarista':
-        loadComponent(<HireBarista />);
-        break;
-      case 'hireTechnician':
-        loadComponent(<HireTechnician />);
-        break;
-      case 'retailShop':
-        loadComponent(<RetailShop />);
-        break;
-      case 'cuppingTickets':
-        loadComponent(<CuppingTickets />);
-        break;
-      default:
-        setCurrentComponent(null);
-        break;
-    }
   }, [selectedOption]);
 
   return (
@@ -59,7 +60,9 @@ const MainContent = ({ selectedOption }) => {
           Loading...
         </div>
       ) : (
-        currentComponent
+        <Suspense fallback={<div className="loading-indicator">Loading...</div>}>
+          {currentComponent}
+        </Suspense>
       )}
     </div>
   );

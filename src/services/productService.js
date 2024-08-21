@@ -1,4 +1,4 @@
-import { collection, addDoc, doc, updateDoc, deleteDoc, getDoc } from 'firebase/firestore';
+import { collection, addDoc, doc, updateDoc, deleteDoc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../firebase'; // Ensure 'db' is correctly imported
 
 const addProduct = async (product) => {
@@ -37,4 +37,20 @@ const getProduct = async (productId) => {
   }
 };
 
-export { addProduct, updateProduct, deleteProduct, getProduct };
+// New function to get all products
+const getAllProducts = async () => {
+  try {
+    const productsCollection = collection(db, 'products');
+    const productsSnapshot = await getDocs(productsCollection);
+    const productList = productsSnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    return productList;
+  } catch (e) {
+    console.error('Error getting all products: ', e);
+    return [];
+  }
+};
+
+export { addProduct, updateProduct, deleteProduct, getProduct, getAllProducts };

@@ -68,8 +68,8 @@
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  margin-left: 265px; /* Adjusted to match sidebar width */
-  margin-top: 12px; /* Ensure content is below navbar */
+  margin-left: 263px; /* Adjusted to match sidebar width */
+  margin-top: 104px; /* Ensure content is below navbar */
   margin-right: 6px;
   margin-bottom:4px;
 }

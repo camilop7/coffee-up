@@ -2,7 +2,6 @@
 
 .hire-barista {
   padding: 20px;
-  margin-top: 60px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -14,7 +13,7 @@
 }
 
 .description-card {
-  border: 1px solid #000000;
+  border: 1px #000000;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -37,7 +36,7 @@
 }
 
 .profile-card .avatar img {
-  border: 1px solid #000000;
+  border: 1px #000000;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -46,7 +45,7 @@
 
 .profile-card .barista-info {
   text-align: justify;
-  border: 1px solid #000000;
+  border: 1px #000000;
 }
 
 .form-card {
@@ -73,7 +72,7 @@
   width: 100%;
   padding: 8px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px #ccc;
   border-radius: 4px;
 }
 
