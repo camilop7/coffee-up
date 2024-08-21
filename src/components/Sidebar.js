@@ -15,8 +15,7 @@ const Sidebar = ({ onSelect }) => {
 
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <div className="sidebar-title"></div>
-      <ul>
+      <ul className="sidebar-items">
         <li onClick={() => handleItemClick('hireBarista')}>
           Hire a Barista
         </li>
@@ -26,7 +25,6 @@ const Sidebar = ({ onSelect }) => {
         <li onClick={() => handleItemClick('cuppingTickets')}>
           Cupping Tickets
         </li>
-
         <li onClick={() => handleItemClick('shop')}>
           Shop
         </li>

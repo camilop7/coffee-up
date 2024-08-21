@@ -1,9 +1,13 @@
 /* src/components/Avatar.css */
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 70px; /* Adjust to match the logo size */
+  height: 70px; /* Adjust to match the logo size */
   border-radius: 50%;
-  background-color: #ccc;
-  cursor: pointer;
-  margin-left: 20px;
+  overflow: hidden; /* Ensure the image fits within the circle */
+}
+
+.avatar img {
+  width: 100%; /* Make sure the image covers the entire avatar area */
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
 }

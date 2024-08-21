@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
   box-sizing: border-box;
   position: fixed;
   top: 0; /* Stick to the top */
@@ -54,8 +54,8 @@
 }
 
 .sidebar li:hover {
-  background-color: #cce6ff; /* Light blue background on hover */
-  color: #007bff; /* Blue text color on hover */
+  background-color: #707070; /* Light blue background on hover */
+  color: #000000; /* Blue text color on hover */
 }
 
 /* Main content styles */
