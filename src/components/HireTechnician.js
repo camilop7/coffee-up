@@ -197,21 +197,21 @@ const HireTechnician = ({ isDarkMode }) => {
       <PartnerBanner />
       <Carousel showThumbs={false} autoPlay infiniteLoop>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1694860163/Y29mZmVlLWJlYW4tbWVkaXVtLXJvYXN0ZWQtd2l0aC1sZWFmLWZyZXNoLW1vcm5pbmdfMzk3NjgtNjU2MV90dGtidmQ=/drilldown" alt="Carousel 1" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724528064/NTY4NTQ5MDM5ODhfX0UzRkUzNDI2LTVGQUUtNDY0NS1BNDlBLUQ5MjBEOUMyRTM0NV90Ym56dGo=/drilldown" alt="Carousel 1" />
           <div className="carousel-caption">
             <h2>Our Skilled Technicians</h2>
             <button>Learn More</button>
           </div>
         </div>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1694860163/Y29mZmVlLWJlYW4tbWVkaXVtLXJvYXN0ZWQtd2l0aC1sZWFmLWZyZXNoLW1vcm5pbmdfMzk3NjgtNjU2MV90dGtidmQ=/drilldown" alt="Carousel 2" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724528336/c2FucmVtb19rbmlhanVfODQ2ZDE1/drilldown" alt="Carousel 2" />
           <div className="carousel-caption">
             <h2>Quality Service</h2>
             <button>Contact Us</button>
           </div>
         </div>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1694860163/Y29mZmVlLWJlYW4tbWVkaXVtLXJvYXN0ZWQtd2l0aC1sZWFmLWZyZXNoLW1vcm5pbmdfMzk3NjgtNjU2MV90dGtidmQ=/drilldown" alt="Carousel 3" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724528544/SU1HXzUxMTdfamhmNXhl/drilldown" alt="Carousel 3" />
           <div className="carousel-caption">
             <h2>Reliable Support</h2>
             <button>Get Started</button>

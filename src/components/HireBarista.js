@@ -125,14 +125,13 @@ const HireBarista = ({ isDarkMode }) => {
     <div className={`hire-barista ${isDarkMode ? 'hire-barista-dark' : ''}`}>
       <Carousel showThumbs={false} autoPlay infiniteLoop>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724168732/Q0FSQVZBTl9ndmY3d3g=/drilldown" alt="Carousel 1" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1695482490/SU1HXzM3MjNfYXVwcmxr/drilldown" alt="Carousel 1" />
         </div>
         <div>
           <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1698955116/a2F3YV9heThlZ2Y=/drilldown" alt="Carousel 2" />
         </div>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1695482490/SU1HXzM3MjNfYXVwcmxr/drilldown" alt="Carousel 3" />
-
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724527572/cGFpbmF1Y195NnZqeXQ=/template_primary/d18xMDAwLGFyXzE2OjksY19maWxsLGdfYXV0byxlX3NoYXJwZW4=" alt="Carousel 3" />
         </div>
       </Carousel>
 

@@ -1,6 +1,7 @@
 /* src/components/Shop.css */
 .shop {
   padding: 20px;
+  width: 1070px;
 }
 
 .shop-dark {
@@ -104,7 +105,7 @@
 
 .see-product-btn {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #828282;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;

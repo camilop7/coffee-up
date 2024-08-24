@@ -2,7 +2,7 @@
 
 .hire-technician {
   padding: 20px;
-  width: 1100px;
+  width: 1070px;
 }
 
 .hire-technician-dark {
@@ -17,12 +17,13 @@
 }
 
 .partner-banner img {
-  width: 100px;
+  width: 80px;
   height: auto;
 }
 
 .carousel .slide img {
   border: 1px #000000;
+  border-radius: 0.25%;
 }
 
 .carousel-caption {
