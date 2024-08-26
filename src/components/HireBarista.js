@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { auth, db } from '../firebase'; // Ensure you have the correct path to firebase
+import { collection, addDoc } from 'firebase/firestore';
 import './HireBarista.css';
 import BaristaProfileCard from './BaristaProfileCard';
-import ShopReviewCard from './ShopReviewCard';
-import AvailabilityCalendar from './AvailabilityCalendar';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Carousel styles
 import ErrorBoundary from './ErrorBoundary'; // Import ErrorBoundary
@@ -12,14 +12,18 @@ const HireBarista = ({ isDarkMode }) => {
     name: '',
     email: '',
     date: '',
-    time: ''
+    startTime: '',
+    endTime: '',
+    hourlyRate: '13'
   });
 
   const [formErrors, setFormErrors] = useState({
     name: '',
     email: '',
     date: '',
-    time: ''
+    startTime: '',
+    endTime: '',
+    hourlyRate: ''
   });
 
   const [baristas] = useState([
@@ -27,29 +31,13 @@ const HireBarista = ({ isDarkMode }) => {
       id: 1,
       name: 'John Doe',
       avatar: 'avatar.png',
-      introduction: 'Meet Alex, our incredibly talented barista with years of experience crafting exceptional coffee in the bustling coffee scenes of New York and London. With a deep love for the art of brewing, Alex brings a wealth of knowledge and a keen eye for detail to every cup. Whether you are after a perfectly balanced espresso or a smooth, velvety flat white, Alex is here to make your coffee experience truly unforgettable. Come say hi and let Alex create your new favorite coffee!',
+      introduction: 'Meet Alex, our incredibly talented barista with years of experience crafting exceptional coffee in the bustling coffee scenes of New York and London...',
       availability: [
         { date: '2024-08-01', color: 'blue' },
         { date: '2024-08-05', color: 'green' }
       ]
     },
     // Add more barista profiles as needed
-  ]);
-
-  const [shops] = useState([
-    {
-      id: 1,
-      images: ['https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1698956273/Y2xlbmtlcndlbGxfenJhNWIx/drilldown', 'shop1b.jpg', 'shop1c.jpg'],
-      locationLink: 'https://maps.google.com/',
-      review: 'Great atmosphere and excellent coffee.'
-    },
-    {
-      id: 2,
-      images: ['https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1698956273/Y2xlbmtlcndlbGxfenJhNWIx/drilldown', 'shop2b.jpg', 'shop2c.jpg'],
-      locationLink: 'https://maps.google.com/',
-      review: 'Cozy place with a fantastic selection of pastries.'
-    },
-    // Add more shop reviews as needed
   ]);
 
   const handleChange = (e) => {
@@ -60,11 +48,16 @@ const HireBarista = ({ isDarkMode }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log(formData); // Replace with your API call or further processing
-      clearForm();
+      try {
+        const docRef = await addDoc(collection(db, 'baristaBookings'), formData);
+        console.log('Document written with ID: ', docRef.id);
+        clearForm();
+      } catch (e) {
+        console.error('Error adding document: ', e);
+      }
     } else {
       console.error('Form submission aborted due to validation errors.');
     }
@@ -76,7 +69,9 @@ const HireBarista = ({ isDarkMode }) => {
       name: '',
       email: '',
       date: '',
-      time: ''
+      startTime: '',
+      endTime: '',
+      hourlyRate: ''
     };
 
     if (!formData.name.trim()) {
@@ -97,8 +92,18 @@ const HireBarista = ({ isDarkMode }) => {
       valid = false;
     }
 
-    if (!formData.time.trim()) {
-      errors.time = 'Time is required';
+    if (!formData.startTime.trim()) {
+      errors.startTime = 'Start time is required';
+      valid = false;
+    }
+
+    if (!formData.endTime.trim()) {
+      errors.endTime = 'End time is required';
+      valid = false;
+    }
+
+    if (!formData.hourlyRate.trim() || isNaN(formData.hourlyRate) || formData.hourlyRate < 13) {
+      errors.hourlyRate = 'Hourly rate must be at least £13';
       valid = false;
     }
 
@@ -111,13 +116,17 @@ const HireBarista = ({ isDarkMode }) => {
       name: '',
       email: '',
       date: '',
-      time: ''
+      startTime: '',
+      endTime: '',
+      hourlyRate: '13'
     });
     setFormErrors({
       name: '',
       email: '',
       date: '',
-      time: ''
+      startTime: '',
+      endTime: '',
+      hourlyRate: ''
     });
   };
 
@@ -138,7 +147,7 @@ const HireBarista = ({ isDarkMode }) => {
       <div className="description-card">
         <h2>Our Barista Culture</h2>
         <p>
-        We pride ourselves on delivering an unparalleled coffee experience that has been finely honed over years of expertise in some of the world's most vibrant coffee cities. Our highly skilled baristas are true artisans, with a deep passion for crafting the perfect cup just for you. Whether you’re a fan of a classic espresso, a meticulously brewed V60 pour-over, or an innovative AeroPress extraction, we have the perfect brew to satisfy your coffee cravings. We offer a wide array of services, from intricate latte art that turns your coffee into a canvas, to custom coffee blends that are tailored to your unique taste preferences. Our commitment to quality and our mastery of the latest coffee brewing techniques ensure that every sip you take is an experience in itself. Come in and discover why we are the go-to destination for coffee lovers in search of perfection.
+          We pride ourselves on delivering an unparalleled coffee experience...
         </p>
       </div>
 
@@ -187,27 +196,43 @@ const HireBarista = ({ isDarkMode }) => {
           {formErrors.date && <span className="error-message">{formErrors.date}</span>}
         </div>
         <div className="form-group">
-          <label htmlFor="time">Time:</label>
+          <label htmlFor="startTime">Start Time:</label>
           <input
             type="time"
-            id="time"
-            name="time"
-            value={formData.time}
+            id="startTime"
+            name="startTime"
+            value={formData.startTime}
             onChange={handleChange}
-            className={formErrors.time ? 'error' : ''}
+            className={formErrors.startTime ? 'error' : ''}
           />
-          {formErrors.time && <span className="error-message">{formErrors.time}</span>}
+          {formErrors.startTime && <span className="error-message">{formErrors.startTime}</span>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="endTime">End Time:</label>
+          <input
+            type="time"
+            id="endTime"
+            name="endTime"
+            value={formData.endTime}
+            onChange={handleChange}
+            className={formErrors.endTime ? 'error' : ''}
+          />
+          {formErrors.endTime && <span className="error-message">{formErrors.endTime}</span>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="hourlyRate">Hourly Rate (£):</label>
+          <input
+            type="number"
+            id="hourlyRate"
+            name="hourlyRate"
+            value={formData.hourlyRate}
+            onChange={handleChange}
+            className={formErrors.hourlyRate ? 'error' : ''}
+          />
+          {formErrors.hourlyRate && <span className="error-message">{formErrors.hourlyRate}</span>}
         </div>
         <button type="submit">Submit</button>
       </form>
-
-      <div className="shop-reviews">
-        <ErrorBoundary>
-          <ShopReviewCard shops={shops} />
-        </ErrorBoundary>
-      </div>
-
-      <AvailabilityCalendar availability={baristas.reduce((acc, curr) => [...acc, ...curr.availability], [])} />
     </div>
   );
 };
