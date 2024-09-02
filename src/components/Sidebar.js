@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = ({ onSelect }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Sidebar = ({ onSelect, toggleDarkMode, isDarkMode }) => {
   const handleItemClick = (option) => {
     onSelect(option);
-    setIsOpen(false); // Close sidebar after selecting an option
-  };
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+    <div className="sidebar">
+      {/* Dark Mode Toggle as the First Item */}
+      <div className="sidebar-dark-mode-toggle">
+        <button onClick={toggleDarkMode} className="toggle-button">
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
+
       <ul className="sidebar-items">
         <li onClick={() => handleItemClick('hireBarista')}>
           Hire a Barista
@@ -41,9 +41,6 @@ const Sidebar = ({ onSelect }) => {
           Profile
         </li>
       </ul>
-      <div className="sidebar-toggle" onClick={toggleSidebar}>
-        {isOpen ? 'Close' : 'Open'}
-      </div>
     </div>
   );
 };

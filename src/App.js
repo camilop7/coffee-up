@@ -6,19 +6,31 @@ import './App.css';
 
 const App = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleSelectOption = (option) => {
-    console.log('Selected Option:', option); // Log the selected option
     setSelectedOption(option);
   };
 
-  console.log('Current Selected Option:', selectedOption); // Log the current selected option
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
 
   return (
-    <div className="app">
+    <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}>
       <Navbar />
-      <Sidebar onSelect={handleSelectOption} />
+      <Sidebar
+        onSelect={handleSelectOption}
+        toggleDarkMode={toggleDarkMode}
+        isDarkMode={isDarkMode}
+      />
       <MainContent selectedOption={selectedOption} />
+      <div className="toggle-switch">
+        <label>
+          <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
+          <span className="toggle-slider"></span>
+        </label>
+      </div>
     </div>
   );
 };
