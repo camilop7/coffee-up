@@ -120,17 +120,13 @@ const HireTechnician = ({ isDarkMode }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Simulate booking confirmation logic
       const isAvailable = checkAvailability(formData.date);
       if (isAvailable) {
-        console.log('Booking confirmed:', formData); // Replace with your API call or further processing
+        console.log('Booking confirmed:', formData);
         clearForm();
       } else {
-        console.error('No technicians available on the date requested.');
-        alert('We are sorry, but there are no technicians available on the date you requested. Please send us an email with your inquiries, and we will try to allocate the next available technician to your store.');
+        alert('No technicians available on the requested date.');
       }
-    } else {
-      console.error('Form submission aborted due to validation errors.');
     }
   };
 
@@ -186,18 +182,15 @@ const HireTechnician = ({ isDarkMode }) => {
   };
 
   const checkAvailability = (date) => {
-    // Simulate availability check
-    // Replace with actual logic to check technician's schedule
-    // For demonstration, return true if date is not empty
-    return !!date; // Change this condition based on your actual availability logic
+    return !!date;
   };
 
   return (
     <div className={`hire-technician ${isDarkMode ? 'hire-technician-dark' : ''}`}>
       <PartnerBanner />
-      <Carousel showThumbs={false} autoPlay infiniteLoop>
+      <Carousel showThumbs={false} autoPlay infiniteLoop showStatus={false}>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724528064/NTY4NTQ5MDM5ODhfX0UzRkUzNDI2LTVGQUUtNDY0NS1BNDlBLUQ5MjBEOUMyRTM0NV90Ym56dGo=/drilldown" alt="Carousel 1" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724173077/NTY4NTQ5MDM5ODhfX0UzRkUzNDI2LTVGQUUtNDY0NS1BNDlBLUQ5MjBEOUMyRTM0NV90Ym56dGpfOGRkNjE3/drilldown" alt="Carousel 1" />
           <div className="carousel-caption">
             <h2>Our Skilled Technicians</h2>
             <button>Learn More</button>
@@ -211,7 +204,7 @@ const HireTechnician = ({ isDarkMode }) => {
           </div>
         </div>
         <div>
-          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724528544/SU1HXzUxMTdfamhmNXhl/drilldown" alt="Carousel 3" />
+          <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1725472456/SU1HXzUxMTdfamhmNXhl/drilldown" alt="Carousel 3" />
           <div className="carousel-caption">
             <h2>Reliable Support</h2>
             <button>Get Started</button>

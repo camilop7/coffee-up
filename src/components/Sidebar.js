@@ -23,7 +23,7 @@ const Sidebar = ({ onSelect, toggleDarkMode, isDarkMode }) => {
           Hire a Technician
         </li>
         <li onClick={() => handleItemClick('cuppingTickets')}>
-          Cupping Tickets
+          Cuppings & Events
         </li>
         <li onClick={() => handleItemClick('shop')}>
           Shop
