@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 
-const ProfileForm = lazy(() => import('./ProfileForm'));
+const Profile = lazy(() => import('./Profile'));
 const Shop = lazy(() => import('./Shop'));
 const ProductForm = lazy(() => import('./ProductForm'));
 const ChatbotForm = lazy(() => import('./ChatbotForm'));
@@ -19,7 +19,7 @@ const MainContent = ({ selectedOption }) => {
 
     switch (selectedOption) {
       case 'profile':
-        component = <ProfileForm />;
+        component = <Profile />;
         break;
         case 'shop':
           component = <Shop />;

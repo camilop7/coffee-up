@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Shop.css';
-import { getAllProducts } from '../services/productService';
+import { getAllProducts } from '../services/ProductService';
 import ShopForm from './ShopForm';
 
 const Shop = ({ isDarkMode }) => {

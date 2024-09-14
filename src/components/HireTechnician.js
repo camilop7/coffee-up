@@ -192,7 +192,7 @@ const HireTechnician = ({ isDarkMode }) => {
         <div>
           <img src="https://res-console.cloudinary.com/difj9msh3/thumbnails/v1/image/upload/v1724173077/NTY4NTQ5MDM5ODhfX0UzRkUzNDI2LTVGQUUtNDY0NS1BNDlBLUQ5MjBEOUMyRTM0NV90Ym56dGpfOGRkNjE3/drilldown" alt="Carousel 1" />
           <div className="carousel-caption">
-            <h2>Our Skilled Technicians</h2>
+            <h2>Skilled Technicians</h2>
             <button>Learn More</button>
           </div>
         </div>

@@ -1,0 +1,68 @@
+/* Profile.css */
+.profile-page {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+  width: 424px;
+  margin-top: 150px;
+  background-color: #f0f2f5;
+}
+
+.login-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 350px; /* Set max width to control the width of the form */
+}
+
+.form-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Rounded corners */
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #000000; /* Focus color */
+}
+
+.submit1-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px; /* Same rounded corners as input */
+  background-color: #000000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box; /* Same box-sizing to align with input */
+}
+
+.submit-button:hover {
+  background-color: #000000;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+}
